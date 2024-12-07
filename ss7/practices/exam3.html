@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let a = parseInt(prompt("Nhập giá trị a"))
+        let b = parseInt(prompt("Nhập giá trị b"))
+
+        if(isNaN(a) || isNaN(b)){
+            alert("Vui lòng nhập số nguyên")
+        }
+        else{
+            if(b === 0){
+                alert("không thể chia hết cho 0")
+            }
+            else if(a % b === 0){
+                alert(` ${a} là bội của ${b} `)
+            }
+            else{
+                alert(`${a} không phải là bội của ${b}`)
+            }
+        }
+    </script>
+</body>
+</html>
