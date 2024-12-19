@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="caculator">
+        <h2 class="caculator__heading">Caculator</h2>
+        <input type="number" id="number-fist">
+        <input type="number" id="number-last">
+        <button id="addtion" onclick="maytinh('+')">
+            Addtion(+)
+        </button>
+        <button id="subtraction" onclick="maytinh('-')">
+            Subtraction(-)
+        </button>
+        <button id="multiplucation" onclick="maytinh('*')">
+            Multiplication(x)
+        </button>
+        <button id="division" onclick="maytinh('/')">
+            Division(/)
+        </button>
+        <p>Result: <span id="result"></span></p>
+    </div> 
+    <script>
+        function maytinh(operator){
+            const ketqua = document.getElementById('result');
+            let result = 0;
+            const fistNumber = parseFloat(document.getElementById('number-fist').value)
+            const lastNumber = parseFloat(document.getElementById('number-last').value)
+            switch(operator){
+                case "+": 
+                result = fistNumber + lastNumber
+                break;
+                case "-": 
+                result = fistNumber - lastNumber
+                break;
+
+                case "*": 
+                result = fistNumber * lastNumber
+                break;
+                
+                case "/": 
+                result = fistNumber / lastNumber
+                break;
+                default: return
+            }
+            ketqua.innerHTML = result
+        }
+    </script>
+</body>
+</html>

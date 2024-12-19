@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính diện tích hình tròn</h2>
+    <span id="number"></span>
+    <script>
+        const r = parseFloat(prompt("Nhập bán kính"));
+        function tinhDienTichHinhTron(r){
+            const PI = Math.PI;
+            return PI * r * r;
+        }
+        document.getElementById('number').innerHTML = tinhDienTichHinhTron(r).toFixed(5);
+    </script>
+</body>
+</html>

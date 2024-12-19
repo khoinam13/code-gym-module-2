@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Chu vi hình tròn là:</h2>
+    <span id="number"></span>
+    <script>
+        const r = parseFloat(prompt("Nhập bán kính hình tròn"))
+        function tinhChuViHinhTron(r){
+            return chuViHinhTron = 2 * Math.PI * r
+        }
+        document.getElementById('number').innerHTML = tinhChuViHinhTron(r).toFixed(5)
+    </script>
+</body>
+</html>

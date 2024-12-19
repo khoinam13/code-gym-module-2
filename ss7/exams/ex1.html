@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Điểm của sinh viên</h2>
+    <table border="1">
+        <thead>
+            <th>Vật Lý</th>
+            <th>Hoá Học</th>
+            <th>Sinh Học</th>
+            <th>Tổng Điểm</th>
+            <th>Trung Bình</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="vatli">Chưa nhập</td>
+                <td id="hoahoc">Chưa nhập</td>
+                <td id="sinhhoc">Chưa nhập</td>
+                <td id="total"></td>
+                <td id="average"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        const vatLi = parseFloat(prompt("Nhập điểm môn Vật Lý"))
+        const hoaHoc = parseFloat(prompt("Nhập điểm môn Hoá Học"))
+        const sinhHoc = parseFloat(prompt("Nhập điểm môn Sinh Học"))
+        
+        const total = (vatLi + hoaHoc + sinhHoc)
+        const average = total / 3
+
+        document.getElementById('vatli').innerText = vatLi
+        document.getElementById('hoahoc').innerText = hoaHoc
+        document.getElementById('sinhhoc').innerText = sinhHoc
+        document.getElementById('total').innerText = total
+        document.getElementById('average').innerText = average
+
+    </script>
+</body>
+</html>

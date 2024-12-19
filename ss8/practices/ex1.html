@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra năm nhuận</title>
+</head>
+<body>
+    <h2>Kiểm tra năm nhuận ?</h2>
+    <p>Kết quả: Năm <span id="year"></span> là năm <span id="leap-year" style="color: red"></span></p>
+    <script>
+        let year;
+      while (true) {
+           year = parseInt(prompt("Nhập năm bạn cần kiểm tra"));
+          if (!isNaN(year)) {
+              break;
+          } else {
+             alert("vui lòng nhập số")
+          }
+      }
+        const leapYear = document.getElementById('leap-year');
+        let isleapYear = false;
+        let isDivisivLeBy4 = year % 4 === 0;
+        if (isDivisivLeBy4) {
+            let isDivisivLeBy100 = year % 100 == 0;
+            if (isDivisivLeBy100) {
+                const isDivisivLeBy400 = year % 400 == 0
+                if (isDivisivLeBy400) {
+                    isleapYear = true
+                }
+            } else {
+                isleapYear = true
+            }
+        }
+        if(isleapYear){
+            leapYear.innerHTML = "Năm Nhuận"
+        }
+        else{
+            leapYear.innerHTML = "Năm không nhuận"
+        }
+
+
+    </script>
+</body>
+</html>

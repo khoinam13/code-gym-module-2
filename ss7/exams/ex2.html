@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let c = parseFloat(prompt("Nhập giá trị Celsius"))
+        function celsiusToFahrenheit(c){
+            return(c * 9 / 5) + 32;
+        }
+        if(!isNaN(c)){
+            const f = celsiusToFahrenheit(c)  // hàm chuyển dổi
+            alert( `${c} độ C = ${f.toFixed(2)} độ F `)
+        }
+        else{
+            alert("Vui lòng nhập số hợp lệ")
+        }
+    </script>
+</body>
+</html>

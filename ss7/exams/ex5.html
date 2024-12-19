@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+    <div class="monye">
+        <h2 class="monye__heading">Chuyển đổi tiền tuệ</h2>
+        <div class="monye__content row">
+                    <div class="col-4">
+                        <h3 class="monye__item-heding">Số tiền</h3>
+                        <input type="number" placeholder="Nhập số tiền cần chuyển đổi" name="monye" id="monye">
+                    </div>
+                    <div class="col-4">
+                        <h3 class="monye__item-heding">Số tiền chuyển đổi</h3>
+                        <select name="monye__need-to-move" id="monye__need-to-move">
+                            <option value="VND">VND</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="monye__item-heding">Số tiền được chuyển</h3>
+                        <select name="monye__transferred" id="monye__transferred">
+                            <option value="VND">VND</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                        </select>
+                        <button onclick="convert()">Convert</button>
+                    </div>
+                </div>
+                <h2 class="monye__result">Kết quả là: <span id="monye__result"></span></h2>
+        </div>
+    </div>
+    <script>
+        // Tỉ giá cố định
+        const exchangeRate = {
+            USD: {VND: 24000, EUR: 0.85, USD: 1},
+            EUR: { USD: 1.18, VND: 28000 , EUR: 1},
+            VND: { USD: 1/ 24000, EUR: 1/28000, VND: 1}
+        }
+        function convert(){
+
+            const monyeNumber = document.getElementById('monye').value;
+            const monyeResult = document.getElementById('monye__result');
+            const monyeNeedToMove = document.getElementById('monye__need-to-move').value
+            const monyeTransFerred = document.getElementById('monye__transferred').value
+            if(isNaN(monyeNumber)){
+                alert("Vui lòng nhập số")
+                return
+            }
+            const rate = exchangeRate[monyeNeedToMove][monyeTransFerred]
+            const result = monyeNumber * rate
+            monyeResult.innerHTML = `${result} ${monyeTransFerred}`
+        }
+        
+        
+    </script>
+</body>
+</html>

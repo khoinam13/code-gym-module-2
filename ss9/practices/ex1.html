@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dịch chuyển bóng</title>
+</head>
+<body>
+    <img id="myImage" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg" style = "width: 30%"/>
+    <button id="clickBall">Click me</button>
+    <script>
+      let imgObj = null;
+      imgObj = document.getElementById("myImage");
+      function init(){
+          imgObj.style.position = "relative";
+          imgObj.style.left = '0px'
+      }
+      const clickBall = document.getElementById("clickBall");
+      clickBall.addEventListener("click", function (){
+        imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+      } )
+      window.onload = init;
+    </script>
+</body>
+</html>
