@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+    <h2>Hệ thống tính thuế thu nhập cá nhân</h2>
+    <p>Chỉ cần điền Tổng thu nhập, bạn sẽ biết ngay mức thuế TNCN phải nộp</p>
+    <div class="content">
+      <div class="item">
+        <h3>Tổng thu nhập</h3>
+        <input type="number" id="income">
+      </div>
+      <div class="item">
+        <h3>Số người phụ thuộc</h3>
+        <input type="number" id="number-of-dependents">
+      </div>
+      <div class="item">
+        <h3>Thuế TNCN phải nộp </h3>
+        <span id="tax-amount">0</span> VND
+      </div>
+    </div>
+    <script>
+        const inCome = document.getElementById("income");
+        const numberOfDependents = document.getElementById("number-of-dependents");
+        const taxAmount = document.getElementById("tax-amount");
+        const sefReduction = 11000000;
+        let taxableIncome = 0;
+        let taxbacket = 1;
+        function incomeTax() {
+          let result = 0;
+          // tính số thu nhap chiu thue
+          if (inCome.value <= 11000000) {
+            taxableIncome = 0
+          } else {
+            taxableIncome = inCome.value - sefReduction
+            if (numberOfDependents.value > 0) {
+              taxableIncome -= numberOfDependents.value * 4400000;
+              if(taxableIncome <=0){
+                taxableIncome = 0;
+              }
+            }
+          }
+             // tính cấp bậc chịu thuế
+          if (taxableIncome <= 0) {
+            taxbacket = 0;
+            console.log(taxbacket)
+          } else if (taxableIncome <= 5000000) {
+            taxbacket = 1;
+            console.log(taxbacket)
+
+          } else if (taxableIncome <= 10000000) {
+            taxbacket = 2;
+            console.log(taxbacket)
+
+          } else if (taxableIncome <= 18000000) {
+            taxbacket = 3;
+            console.log(taxbacket)
+
+          } else if (taxableIncome <= 32000000) {
+            taxbacket = 4;
+            console.log(taxbacket)
+
+          } else if (taxableIncome <= 52000000) {
+            taxbacket = 5;
+            console.log(taxbacket)
+          } else if (taxableIncome <= 80000000) {
+            taxbacket = 6;
+          }
+          else {
+            taxbacket = 7;
+          }
+
+          //     bắt dầu tính thuế phai tra
+          switch (taxbacket) {
+            case 0:
+              result = 0;
+              break;
+            case 1:
+              result = taxableIncome * 0.05;
+              break;
+            case 2:
+              result = taxableIncome * 0.1;
+              console.log("bac 2")
+              break;
+            case 3:
+              result = taxableIncome * 0.15;
+              break;
+            case 4:
+              result = taxableIncome * 0.2;
+              break;
+            case 5:
+              result = taxableIncome * 0.25;
+              break;
+            case 6:
+              result = taxableIncome * 0.3;
+              break;
+            case 7:
+              result = taxableIncome * 0.35;
+              break;
+            default:
+              result = "Gía trị không đúng";//     in ra html
+          }
+          taxAmount.innerHTML = result;
+        }
+        inCome.addEventListener("input", incomeTax);
+        numberOfDependents.addEventListener("input", incomeTax);
+    </script>
+</body>
+</html>

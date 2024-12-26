@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      let income = parseFloat(prompt("Nhập thu nhập chịu thuế (triệu đồng):"));
+      let tax;
+
+      if (income <= 5) {
+        tax = income * 0.05;
+      } else if (income <= 10) {
+        tax = 5 * 0.05 + (income - 5) * 0.1;
+      } else if (income <= 18) {
+        tax = 5 * 0.05 + 5 * 0.1 + (income - 10) * 0.15;
+      } else {
+        tax = 5 * 0.05 + 5 * 0.1 + 8 * 0.15 + (income - 18) * 0.2;
+      }
+
+      document.write(`Thuế thu nhập cá nhân: ${tax.toLocaleString()} triệu đồng.`);
+
+    </script>
+</body>
+</html>

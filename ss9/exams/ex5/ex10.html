@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      let consumption = parseFloat(prompt("Nhập số điện tiêu thụ (kWh):"));
+      let cost;
+
+      if (consumption <= 50) {
+        cost = consumption * 1.678;
+      } else if (consumption <= 100) {
+        cost = 50 * 1.678 + (consumption - 50) * 1.734;
+      } else if (consumption <= 200) {
+        cost = 50 * 1.678 + 50 * 1.734 + (consumption - 100) * 2.014;
+      } else {
+        cost = 50 * 1.678 + 50 * 1.734 + 100 * 2.014 + (consumption - 200) * 2.536;
+      }
+
+      document.write(`Tổng tiền điện: ${cost.toLocaleString()} VND.`);
+
+    </script>
+</body>
+</html>

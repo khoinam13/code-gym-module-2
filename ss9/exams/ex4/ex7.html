@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      // Nhập số phút sử dụng
+      let soPhut = parseInt(prompt("Nhập tổng số phút gọi trong tháng:"));
+
+      // Khởi tạo biến cước phí
+      let cuocPhi = 25000; // Phí thuê bao cố định
+
+      // Tính cước phí theo số phút
+      if (soPhut <= 300) {
+        cuocPhi += soPhut * 600; // Cước cho 300 phút đầu
+      } else {
+        cuocPhi += 300 * 600 + (soPhut - 300) * 400; // Cước cho phút dư
+      }
+
+      // In kết quả
+      document.write("Tổng số phút gọi: " + soPhut + " phút.");
+      document.write("Tổng cước điện thoại: " + cuocPhi.toLocaleString() + " VNĐ.");
+
+    </script>
+</body>
+</html>

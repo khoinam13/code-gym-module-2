@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      let principal = parseFloat(prompt("Nhập số tiền gửi ban đầu (triệu đồng):"));
+      let months = parseInt(prompt("Nhập số tháng gửi:"));
+      let interestRate = parseFloat(prompt("Nhập lãi suất hàng tháng (%):")) / 100;
+
+      let total = principal * Math.pow(1 + interestRate, months);
+      document.write(`Tổng tiền sau ${months} tháng: ${total.toFixed(2)} triệu đồng.`);
+
+    </script>
+</body>
+</html>
