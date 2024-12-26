@@ -6,17 +6,9 @@
 </head>
 <body>
     <script>
-      // Nhập một số nguyên bất kỳ
-      let number = parseInt(prompt("Nhập một số nguyên bất kỳ:"));
-
-      // Kiểm tra số nhập vào
-      if (number > 0) {
-        document.write("Số bạn nhập lớn hơn 0.");
-      } else if (number < 0) {
-        document.write("Số bạn nhập nhỏ hơn 0.");
-      } else {
-        document.write("Số bạn nhập bằng 0.");
-      }
+      let side = parseFloat(prompt("Nhập cạnh hình vuông (a):"));
+      let squareArea = side * side;
+      document.write(`Diện tích hình vuông là: ${squareArea.toFixed(2)}.`);
 
     </script>
 </body>

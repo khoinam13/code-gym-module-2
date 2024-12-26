@@ -6,22 +6,25 @@
 </head>
 <body>
     <script>
-      // Nhập số phút sử dụng
-      let soPhut = parseInt(prompt("Nhập tổng số phút gọi trong tháng:"));
+      let a = parseFloat(prompt("Nhập hệ số a:"));
+      let b = parseFloat(prompt("Nhập hệ số b:"));
+      let c = parseFloat(prompt("Nhập hệ số c:"));
 
-      // Khởi tạo biến cước phí
-      let cuocPhi = 25000; // Phí thuê bao cố định
-
-      // Tính cước phí theo số phút
-      if (soPhut <= 300) {
-        cuocPhi += soPhut * 600; // Cước cho 300 phút đầu
+      if (a === 0) {
+        document.write("Đây không phải phương trình bậc 2.");
       } else {
-        cuocPhi += 300 * 600 + (soPhut - 300) * 400; // Cước cho phút dư
+        let delta = b * b - 4 * a * c;
+        if (delta > 0) {
+          let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+          let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+          document.write(`Phương trình có 2 nghiệm: x1 = ${x1.toFixed(2)}, x2 = ${x2.toFixed(2)}`);
+        } else if (delta === 0) {
+          let x = -b / (2 * a);
+          document.write(`Phương trình có nghiệm kép: x = ${x.toFixed(2)}`);
+        } else {
+          document.write("Phương trình vô nghiệm.");
+        }
       }
-
-      // In kết quả
-      document.write("Tổng số phút gọi: " + soPhut + " phút.");
-      document.write("Tổng cước điện thoại: " + cuocPhi.toLocaleString() + " VNĐ.");
 
     </script>
 </body>

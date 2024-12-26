@@ -3,8 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <title>Máy tính đơn giản</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100px;
+            flex-wrap: wrap;
+        }
+        .item{
+            flex: 1;
+            max-width: 25%;
+
+        }
+    </style>
 </head>
 <body>
 
+    <div class="container">
+        <input type="text" value="0" id="result"/>
+        <button class="number item" value="1" >1</button>
+        <button class="number item" value="2" >2</button>
+        <button class="number item" value="3" >3</button>
+        <button class="opera item" value="+">+</button>
+        <button class="number item" value="4" >4</button>
+        <button class="number item" value="5" >5</button>
+        <button class="number item" value="6" >6</button>
+        <button class="opera item" value="-">-</button>
+        <button class="number item" value="7" >7</button>
+        <button class="number item" value="8" >8</button>
+        <button class="number item" value="9" >9</button>
+        <button class="opera item" value="*">x</button>
+        <button value="c">C</button>
+        <button class="number item" value="0" >0</button>
+        <button class="submit item" id="submit">=</button>
+        <button class="opera item" value="/" >/</button>
+    </div>
+    <script>
+
+        const number = document.querySelectorAll('.number')
+        const operatorList = document.querySelectorAll('.opera');
+        const submit = document.getElementById('submit');
+        let currentValue = "0";
+        let previousValue = "";
+        let operator = "";
+        let resultElement = document.getElementById('result')
+        number.forEach(number =>{
+            number.addEventListener('click', ()=>{
+               if(currentValue === "0"){
+                   currentValue = number.value;
+               }
+               else{
+                   currentValue += number.value;
+               }
+               if(operator !== ''){
+                   resultElement.value += currentValue;
+               }
+               else{
+                   resultElement.value = currentValue;
+               }
+            })
+        })
+        operatorList.forEach(opera => {
+            opera.addEventListener('click', ()=>{
+                if(currentValue !== ""){
+                    if(previousValue !== "" && operator !==""){
+                        previousValue = eval(`${previousValue} ${operator} ${currentValue}`);
+                    }
+                    else{
+                        previousValue = currentValue;
+
+                    }
+                    operator = opera.value;
+                    resultElement.value += operator;
+                    currentValue = "";
+
+                }
+            })
+        })
+        submit.addEventListener('click', ()=>{
+            if(currentValue !== "" && previousValue !== "" && operator !== ""){
+                const result = eval(`${previousValue} ${operator} ${currentValue}`);
+                currentValue = result.toString();
+                resultElement.value = currentValue;
+                previousValue = "";
+                operator = "";
+            }
+
+        })
+
+    </script>
 </body>
 </html>

@@ -6,29 +6,10 @@
 </head>
 <body>
     <script>
-      // Nhập điểm từ người dùng
-      let diemKiemTra = parseFloat(prompt("Nhập điểm bài kiểm tra:"));
-      let diemGiuaKy = parseFloat(prompt("Nhập điểm thi giữa kỳ:"));
-      let diemCuoiKy = parseFloat(prompt("Nhập điểm thi cuối kỳ:"));
-
-      // Tính điểm trung bình
-      let diemTrungBinh = (diemKiemTra * 0.3) + (diemGiuaKy * 0.3) + (diemCuoiKy * 0.4);
-
-      // Xếp loại học lực
-      let xepLoai;
-      if (diemTrungBinh >= 8.5) {
-        xepLoai = "Giỏi";
-      } else if (diemTrungBinh >= 7.0) {
-        xepLoai = "Khá";
-      } else if (diemTrungBinh >= 5.0) {
-        xepLoai = "Trung bình";
-      } else {
-        xepLoai = "Yếu";
-      }
-
-      // In kết quả
-      document.write("Điểm trung bình: " + diemTrungBinh.toFixed(2));
-      document.write("Xếp loại học lực: " + xepLoai);
+        let base = parseFloat(prompt("Nhập cạnh đáy (a):"));
+        let height = parseFloat(prompt("Nhập chiều cao (b):"));
+        let triangleArea = (base * height) / 2;
+        document.write(`Diện tích tam giác vuông là: ${triangleArea.toFixed(2)}.`);
 
     </script>
 </body>

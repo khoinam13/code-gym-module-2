@@ -6,23 +6,10 @@
 </head>
 <body>
     <script>
-      // Nhập 3 số nguyên
-      let num1 = parseInt(prompt("Nhập số nguyên thứ nhất:"));
-      let num2 = parseInt(prompt("Nhập số nguyên thứ hai:"));
-      let num3 = parseInt(prompt("Nhập số nguyên thứ ba:"));
-
-      // Tìm giá trị lớn nhất
-      let max = num1;
-
-      if (num2 > max) {
-        max = num2;
-      }
-      if (num3 > max) {
-        max = num3;
-      }
-
-      // In kết quả
-      document.write("Giá trị lớn nhất trong ba số là: " + max);
+      let length = parseFloat(prompt("Nhập chiều dài (a):"));
+      let width = parseFloat(prompt("Nhập chiều rộng (b):"));
+      let rectangleArea = length * width;
+      document.write(`Diện tích hình chữ nhật là: ${rectangleArea.toFixed(2)}.`);
 
     </script>
 </body>

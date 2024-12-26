@@ -2,19 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Điều kiện vào học lớp 10</title>
+    <title>Title</title>
 </head>
 <body>
     <script>
-      // Nhập tuổi học sinh
-      let age = parseInt(prompt("Nhập tuổi của học sinh:"));
+      let meters = parseFloat(prompt("Nhập chiều dài (mét):"));
+      let feet = meters * 3.2808;
+      document.write(`${meters} mét bằng ${feet.toFixed(2)} feet.`);
 
-      // Kiểm tra điều kiện
-      if (age >= 15 && age <= 18) {
-        document.write("Học sinh đủ điều kiện vào lớp 10.")
-      } else {
-        document.write("Học sinh không đủ điều kiện vào học lớp 10.")
-      }
     </script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm bội</title>
+
+</head>
+<body>
+    <h2>Tìm bội: kết quả: <span id="result"></span></h2>
+    <button id="reload">Kiểm tra lại</button>
+    <script>
+      const a = parseFloat(prompt('Nhập A'));
+      const b = parseFloat(prompt('Nhập B'));
+      if(isNaN(a) || isNaN(b)) {
+        alert('Vui lòng nhập số đúng');
+        location.reload();
+      }
+      let result = 'không chia hết';
+      if(a % b === 0){
+        result = 'chia hết ';
+      }
+      document.getElementById('result').innerHTML = `${a} ${result} ${b}`;
+      document.getElementById('reload').addEventListener('click', function (){
+        location.reload()
+      })
+    </script>
+</body>
+</html>
