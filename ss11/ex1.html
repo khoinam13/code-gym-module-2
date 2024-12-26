@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Cửu Chương</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+<table id="multiplicationTable">
+  <thead>
+  <tr>
+    <th>Số</th>
+    <th>Kết quả</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Nội dung bảng sẽ được thêm bởi JavaScript -->
+  </tbody>
+</table>
+
+<script>
+  function generateMultiplicationTable() {
+    const tableBody = document.querySelector("#multiplicationTable tbody");
+
+    // Xóa dữ liệu cũ nếu có
+    tableBody.innerHTML = "";
+
+    for (let i = 1; i <= 10; i++) {
+      const row = document.createElement("tr");
+
+      for (let j = 1; j <= 10; j++) {
+        const cell = document.createElement("td");
+        cell.textContent = `${i} x ${j} = ${i * j}`;
+        row.appendChild(cell);
+      }
+      tableBody.appendChild(row);
+    }
+  }
+
+  // Khởi tạo bảng cửu chương khi trang được tải
+  window.onload = generateMultiplicationTable;
+</script>
+</body>
+</html>
+
+</body>
+</html>

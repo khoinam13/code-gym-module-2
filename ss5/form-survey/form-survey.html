@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo form lấy survey khách hàng</title>
+    <link rel="stylesheet" href="form-survey.css">
+</head>
+<body>
+    <div class="container">
+        <form action="" class="register">
+            <h2 class="register__heading">Market Research Survey</h2>
+            <p class="register__decs">Please take a few moments to complete this satisfaction survey.</p>
+            <div class="register__ground">
+                <lable class="register__lable">What is your age range?</lable>
+                <select name="" id="" class="regiser__input">
+                    <option value="1">18-24</option>
+                    <option value="2">25-34</option>
+                    <option value="3">35-50</option>
+                    <option value="4">50+</option>
+                </select>
+            </div>
+            <div class="register__ground">
+                <lable class="register__lable">What is your yearly income range?</lable>
+                <select name="" id="" class="regiser__input">
+                    <option value="1">$0 - $25,000</option>
+                    <option value="2">$25001 - $50,000</option>
+                    <option value="3">$50,001 - $100,000</option>
+                    <option value="4">$100,000+</option>
+                </select>
+            </div>
+            <div class="register__ground">
+                <lable class="register__lable">Gender Identity</lable>
+                <input type="radio" class="regiter__input" name="gender" value="male"> <span>Male</span> <div></div>
+                <input type="radio" class="regiter__input" name="gender" value="female"> <span>Female</span> <div></div>
+                <input type="radio" class="regiter__input" name="gender" value="nonbinary"> <span>Nonbinary</span> <div></div>
+                <input type="radio" class="regiter__input" name="gender" value=""> <span>Other</span> <div></div>
+                <input type="text" name="gender" value="">
+                <p class="register__other-decs">Maximum of 250 characters. <span>Currently Used: 8 characters.</span></p>
+            </div>
+            <div class="register__ground">
+                <lable class="register__lable">Which of the following products have your purchased in the last 2 months. Please check all that apply.</lable>
+                <input type="checkbox" class="regiter__input" name="product" value="1"> <span>Product 1</span> <div></div>
+                <input type="checkbox" class="regiter__input" name="product" value="2"> <span>Product 2</span> <div></div>
+                <input type="checkbox" class="regiter__input" name="product" value="3"> <span>Product 3</span> <div></div>
+            </div>
+            <div class="register__ground">
+                <lable class="register__lable">How often would you use our new product?</lable>
+                <input type="radio" class="regiter__input" name="time-use" value="daily"> <span>Daily</span> <div></div>
+                <input type="radio" class="regiter__input" name="time-use" value="weekly"> <span>Weekly</span> <div></div>
+                <input type="radio" class="regiter__input" name="time-use" value="monthly"> <span>Monthly</span> <div></div>
+            </div>
+            <div class="register__ground">
+                <lable class="register__lable">What would you pay for the new product?</lable>
+                <span>$</span><input type="text" class="regiter__input regiter__input--money">. 
+                <input type="text" class="regiter__input regiter__input--money">
+                <div class="regiter__input-money-desc">
+                    <span class="regiser__input-money-desc-title">Dolars</span>
+                    <span class="regiser__input-money-desc-title">Cents</span>
+                </div>
+            </div>
+            <div class="register__ground">
+                <lable class="register__lable">What would you pay for the new product?</lable>
+                <input type="text" class="regiter__input">
+            </div>
+            <div class="register__ground">
+                <lable class="register__lable">What features would you like to see in the new product.</lable>
+                <textarea class="regiter__input" name="" id="" ></textarea>
+            </div>
+            <div class="register__ground">
+                <lable class="register__lable">Please rate your level of agreement with the following statements.</lable>
+                <table class="register__feedback">
+                        <thead>
+                            <th class="register__feedback-heading"></th>
+                            <th class="register__feedback-heading">Strongly Disagree</th>
+                            <th class="register__feedback-heading">Disagree</th>
+                            <th class="register__feedback-heading">Agree</th>
+                            <th class="register__feedback-heading">Strongly Agree</th>
+                        
+                        </thead>
+                        <tbody>
+                            <tr class="register__feedback-list">
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="1">1</td>
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="2">2</td>
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="3">3</td>
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="4">4</td>
+                            </tr>
+                            <tr class="register__feedback-list">
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="1">1</td>
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="2">2</td>
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="3">3</td>
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="4">4</td>
+                            </tr>
+                            <tr class="register__feedback-list">
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="1">1</td>
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="2">2</td>
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="3">3</td>
+                                <td class="register__feedback-item"><input type="checkbox" class="register__input" value="4">4</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+            <div class="register__ground">
+                <input type="submit" class="regiser__input" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

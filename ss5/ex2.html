@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Đăng Ký</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 8px;
+      display: block;
+    }
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .hobby-group {
+      margin-bottom: 15px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      width: 48%;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .reset-button {
+      background-color: #f44336;
+      margin-left: 10px;
+    }
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+<form action="#" method="POST">
+  <h2>Form Đăng Ký</h2>
+  <!-- Trường họ và tên -->
+  <label for="yourname">Họ và Tên:</label>
+  <input type="text" id="yourname" name="yourname" required>
+
+  <!-- Trường email -->
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <!-- Các checkbox sở thích -->
+  <div class="hobby-group">
+    <label>Sở thích:</label><br>
+    <input type="checkbox" id="hobby1" name="hobby" value="Chơi thể thao">
+    <label for="hobby1">Chơi thể thao</label><br>
+    <input type="checkbox" id="hobby2" name="hobby" value="Đọc sách">
+    <label for="hobby2">Đọc sách</label><br>
+    <input type="checkbox" id="hobby3" name="hobby" value="Du lịch">
+    <label for="hobby3">Du lịch</label><br>
+  </div>
+
+  <!-- Nút gửi thông tin và nhập lại -->
+  <div class="form-actions">
+    <button type="submit">Gửi thông tin</button>
+    <button type="reset" class="reset-button">Nhập lại</button>
+  </div>
+</form>
+</body>
+</html>

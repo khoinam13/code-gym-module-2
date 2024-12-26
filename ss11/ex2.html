@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // Bước 1: Nhập số lượng số nguyên tố cần in ra
+        let numbers = parseInt(prompt("Nhập số lượng số nguyên tố cần in ra:"));
+
+        // Bước 2: Khởi tạo biến đếm và giá trị bắt đầu kiểm tra
+        let count = 0; // Biến đếm số lượng số nguyên tố đã tìm được
+        let N = 2; // Số bắt đầu kiểm tra
+
+        // Bước 4: Dùng vòng lặp để tìm và in số nguyên tố
+        while (count < numbers) {
+            let isPrime = true;
+
+            // Kiểm tra xem N có phải là số nguyên tố không
+            for (let i = 2; i <= Math.sqrt(N); i++) {
+                if (N % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                document.write(N); // In ra số nguyên tố
+                count++; // Tăng biến đếm
+            }
+
+            N++; // Kiểm tra số tiếp theo
+        }
+
+    </script>
+</body>
+</html>

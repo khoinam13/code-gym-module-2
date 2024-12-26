@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container{
+   margin-top: 4px;
+}
+.registe{
+    margin: 0;
+}
+.register__heading{
+    font-weight: 400;
+    margin: 0;
+    font-size: 22px;
+    padding: 0 8px;
+}
+.register__decs{
+    color: #555555;
+    font-size: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e4e1e1;  
+    padding-left: 8px;
+}
+.register__ground{
+    padding: 6px 8px;
+
+}
+.register__lable{
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+}
+select{
+    width: 626px;
+    height: 22px;
+    outline: none;
+    font-size: 16px;
+    
+}
+option{
+    height: 20px;
+    font-size: 16px;
+}
+
+
