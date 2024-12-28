@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Fibonacci chia hết cho 5</title>
+</head>
+<body>
+<h1>Bài 4: Số Fibonacci đầu tiên chia hết cho 5</h1>
+<button onclick="findFibonacciDivisibleBy5()">Tìm số</button>
+
+<script>
+    function findFibonacciDivisibleBy5() {
+        let fib = [0, 1];
+        let i = 2;
+        while (true) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+            if (fib[i] % 5 === 0) {
+                alert(`Số Fibonacci đầu tiên chia hết cho 5 là: ${fib[i]}`);
+                break;
+            }
+            i++;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 5: Tính lãi ngân hàng</title>
+</head>
+<body>
+<h1>Bài 5: Tính lãi ngân hàng</h1>
+<button onclick="calculateBankInterest()">Tính lãi</button>
+
+<script>
+  function calculateBankInterest() {
+    let principal = parseFloat(prompt("Nhập số tiền ban đầu:"));
+    let months = parseInt(prompt("Nhập số tháng:"));
+    let rate = parseFloat(prompt("Nhập lãi suất hàng tháng (%):")) / 100;
+
+    for (let i = 1; i <= months; i++) {
+      principal += principal * rate;
+    }
+    alert(`Số tiền sau ${months} tháng là: ${principal.toFixed(2)} VND`);
+  }
+</script>
+</body>
+</html>

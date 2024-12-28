@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Dãy Fibonacci</title>
+</head>
+<body>
+<h1>Bài 3: Hiển thị 20 số Fibonacci đầu tiên</h1>
+<button onclick="showFibonacci()">Hiển thị</button>
+
+<script>
+    function showFibonacci() {
+        let fib = [0, 1];
+        for (let i = 2; i < 20; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+        alert(fib.join(", "));
+    }
+</script>
+</body>
+</html>

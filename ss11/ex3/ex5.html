@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5: Tổng Fibonacci</title>
+</head>
+<body>
+<h1>Bài 5: Tính tổng 20 số đầu tiên của dãy Fibonacci</h1>
+<button onclick="sumFibonacci()">Tính tổng</button>
+
+<script>
+    function sumFibonacci() {
+        let fib = [0, 1];
+        let sum = fib[0] + fib[1];
+        for (let i = 2; i < 20; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+            sum += fib[i];
+        }
+        alert(`Tổng của 20 số đầu tiên trong dãy Fibonacci là: ${sum}`);
+    }
+</script>
+</body>
+</html>

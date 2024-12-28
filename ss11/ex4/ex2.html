@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 2: Tính giai thừa</title>
+</head>
+<body>
+<h1>Bài 2: Tính giai thừa</h1>
+<button onclick="calculateFactorial()">Tính giai thừa</button>
+
+<script>
+  function calculateFactorial() {
+    let n = parseInt(prompt("Nhập một số nguyên dương:"));
+    let factorial = 1;
+    for (let i = 1; i <= n; i++) {
+      factorial *= i;
+    }
+    alert(`Giai thừa của ${n} là: ${factorial}`);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 3: In tam giác vuông</title>
+</head>
+<body>
+<h1>Bài 3: In tam giác vuông</h1>
+<button onclick="printTriangles()">In tam giác</button>
+
+<script>
+  function printTriangles() {
+    let n = parseInt(prompt("Nhập chiều cao tam giác:"));
+    let triangle = "";
+
+    // Góc vuông ở dưới trái
+    triangle += "Góc vuông ở dưới trái:\n";
+    for (let i = 1; i <= n; i++) {
+      triangle += "*".repeat(i) + "\n";
+    }
+
+    // Góc vuông ở trên trái
+    triangle += "\nGóc vuông ở trên trái:\n";
+    for (let i = n; i >= 1; i--) {
+      triangle += "*".repeat(i) + "\n";
+    }
+
+    // Góc vuông ở dưới phải
+    triangle += "\nGóc vuông ở dưới phải:\n";
+    for (let i = 1; i <= n; i++) {
+      triangle += " ".repeat(n - i) + "*".repeat(i) + "\n";
+    }
+
+    // Góc vuông ở trên phải
+    triangle += "\nGóc vuông ở trên phải:\n";
+    for (let i = n; i >= 1; i--) {
+      triangle += " ".repeat(n - i) + "*".repeat(i) + "\n";
+    }
+
+    alert(triangle);
+  }
+</script>
+</body>
+</html>

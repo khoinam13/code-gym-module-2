@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Kiểm tra nhiệt độ</title>
+</head>
+<body>
+<h1>Bài 2: Kiểm tra nhiệt độ</h1>
+<button onclick="checkTemperature()">Nhập nhiệt độ</button>
+
+<script>
+    function checkTemperature() {
+        let temperature = parseInt(prompt("Nhập nhiệt độ hiện tại:"));
+        while (temperature > 100 || temperature < 20) {
+            if (temperature > 100) {
+                temperature = parseInt(prompt("Nhiệt độ quá cao! Hãy giảm nhiệt độ:"));
+            } else if (temperature < 20) {
+                temperature = parseInt(prompt("Nhiệt độ quá thấp! Hãy tăng nhiệt độ:"));
+            }
+        }
+        alert("Nhiệt độ đã ổn định!");
+    }
+</script>
+</body>
+</html>

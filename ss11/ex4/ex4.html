@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 4: In hình chữ nhật</title>
+</head>
+<body>
+<h1>Bài 4: In hình chữ nhật</h1>
+<button onclick="printRectangle()">In hình chữ nhật</button>
+
+<script>
+  function printRectangle() {
+    let rows = parseInt(prompt("Nhập số hàng:"));
+    let cols = parseInt(prompt("Nhập số cột:"));
+    let rectangle = "";
+
+    for (let i = 1; i <= rows; i++) {
+      rectangle += "*".repeat(cols) + "\n";
+    }
+    alert(rectangle);
+  }
+</script>
+</body>
+</html>
