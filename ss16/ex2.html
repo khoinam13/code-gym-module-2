@@ -2,9 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Class</title>
 </head>
 <body>
+<h1>Chuyển đổi nhiệt độ</h1>
+<div id="temperatureInfo"></div>
+<script>
+    // Định nghĩa lớp Temperature
+    class Temperature {
+        constructor(celsius) {
+            // Đảm bảo giá trị nhiệt độ không nhỏ hơn -273
+            if (celsius < -273) {
+                alert("Nhiệt độ không thể thấp hơn -273 độ C!");
+                this.celsius = -273;
+            } else {
+                this.celsius = celsius;
+            }
+        }
 
+        // Chuyển đổi từ độ C sang độ F
+        toFahrenheit() {
+            return (this.celsius * 9/5) + 32;
+        }
+
+        // Chuyển đổi từ độ C sang Kelvin
+        toKelvin() {
+            return this.celsius + 273.15;
+        }
+    }
+
+    // Khởi tạo đối tượng Temperature với giá trị nhiệt độ là 25 độ C
+    let temp = new Temperature(25);
+
+    // Hiển thị thông tin nhiệt độ và chuyển đổi
+    let tempInfoDiv = document.getElementById("temperatureInfo");
+    tempInfoDiv.innerHTML = `
+            <p>Nhiệt độ hiện tại là: ${temp.celsius} °C</p>
+            <p>Chuyển đổi sang độ F: ${temp.toFahrenheit()} °F</p>
+            <p>Chuyển đổi sang Kelvin: ${temp.toKelvin()} K</p>
+        `;
+</script>
 </body>
 </html>

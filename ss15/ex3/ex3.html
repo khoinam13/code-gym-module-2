@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 3 - So sánh và Tổng</title>
 </head>
 <body>
-
+<script>
+  function compareAndSum(a, b) {
+    if (a > b) {
+      alert("Tham số thứ nhất lớn hơn tham số thứ hai.");
+    } else {
+      return a + b;
+    }
+  }
+  let result = compareAndSum(3, 5);
+  if (result !== undefined) {
+    document.write(`Kết quả: ${result}`);
+  }
+</script>
 </body>
 </html>

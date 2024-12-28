@@ -1,10 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công Tắc và Bóng Đèn</title>
 </head>
 <body>
+<h1>Chương Trình Công Tắc và Bóng Đèn</h1>
+<div id="status"></div>
+<script>
+  // Lớp Bóng Đèn
+  class LightBulb {
+    constructor() {
+      this.isOn = false; // Trạng thái bóng đèn, ban đầu là tắt
+    }
 
+    // Phương thức bật bóng đèn
+    turnOn() {
+      this.isOn = true;
+    }
+
+    // Phương thức tắt bóng đèn
+    turnOff() {
+      this.isOn = false;
+    }
+
+    // Phương thức để kiểm tra trạng thái bóng đèn
+    getStatus() {
+      return this.isOn ? "Bóng đèn đang bật." : "Bóng đèn đang tắt.";
+    }
+  }
+
+  // Lớp Công Tắc
+  class Switch {
+    constructor(lightBulb) {
+      this.lightBulb = lightBulb; // Kết nối công tắc với bóng đèn
+      this.isOn = false; // Ban đầu công tắc là tắt
+    }
+
+    // Phương thức để bật hoặc tắt công tắc
+    toggle() {
+      this.isOn = !this.isOn; // Đảo ngược trạng thái công tắc
+      if (this.isOn) {
+        this.lightBulb.turnOn(); // Nếu công tắc bật, bóng đèn cũng bật
+      } else {
+        this.lightBulb.turnOff(); // Nếu công tắc tắt, bóng đèn cũng tắt
+      }
+    }
+
+    // Phương thức kiểm tra trạng thái công tắc
+    getStatus() {
+      return this.isOn ? "Công tắc đang bật." : "Công tắc đang tắt.";
+    }
+  }
+
+  // Khởi tạo đối tượng bóng đèn và công tắc
+  const bulb = new LightBulb();
+  const switcher = new Switch(bulb);
+
+  // Hiển thị trạng thái ban đầu
+  let statusDiv = document.getElementById("status");
+  statusDiv.innerHTML = `
+            <p>${switcher.getStatus()}</p>
+            <p>${bulb.getStatus()}</p>
+        `;
+
+  // Bật tắt công tắc 10 lần
+  for (let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      switcher.toggle(); // Đảo ngược trạng thái công tắc
+      statusDiv.innerHTML = `
+                    <p>${switcher.getStatus()}</p>
+                    <p>${bulb.getStatus()}</p>
+                `;
+    }, i * 1000); // Đảo ngược trạng thái mỗi 1 giây
+  }
+
+</script>
 </body>
 </html>

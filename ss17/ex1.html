@@ -1,10 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câu Chuyện Adam và Eva</title>
 </head>
 <body>
+<h1>Câu Chuyện Adam và Eva</h1>
+<script>
+  // Lớp Apple: Đại diện cho quả táo
+  class Apple {
+    constructor(weight = 10) {
+      this.weight = weight; // Khối lượng quả táo, mặc định là 10
+    }
 
+    // Phương thức kiểm tra khối lượng quả táo
+    getWeight() {
+      return this.weight;
+    }
+  }
+
+  // Lớp Human: Đại diện cho con người
+  class Human {
+    constructor(name, gender, weight) {
+      this.name = name; // Tên người
+      this.gender = gender; // Giới tính người
+      this.weight = weight; // Cân nặng người
+    }
+
+    // Phương thức nói
+    speak(message) {
+      console.log(`${this.name} says: ${message}`);
+    }
+
+    // Phương thức ăn táo
+    eatApple(apple) {
+      if (apple.getWeight() > 0) {
+        this.weight += 1; // Tăng cân nặng của người lên 1 đơn vị
+        apple.weight -= 1; // Giảm khối lượng quả táo đi 1 đơn vị
+        console.log(`${this.name} eats an apple. Weight: ${this.weight}, Apple weight: ${apple.getWeight()}`);
+      } else {
+        console.log(`${this.name} can't eat the apple. It's all gone!`);
+      }
+    }
+
+    // Phương thức kiểm tra khối lượng của quả táo
+    checkAppleWeight(apple) {
+      console.log(`${this.name} checks the apple. Apple weight: ${apple.getWeight()}`);
+    }
+  }
+
+  // Tạo ra đối tượng quả táo
+  const apple = new Apple();
+
+  // Tạo ra đối tượng Adam và Eva
+  const adam = new Human("Adam", "Male", 70);
+  const eva = new Human("Eva", "Female", 60);
+
+  // Adam và Eva cùng ăn táo
+  adam.speak("Let's eat an apple, Eva!");
+  eva.speak("Sure, Adam!");
+
+  // Adam và Eva bắt đầu ăn táo
+  while (apple.getWeight() > 0) {
+    adam.eatApple(apple); // Adam ăn táo
+    if (apple.getWeight() > 0) {
+      eva.eatApple(apple); // Eva ăn táo nếu táo còn
+    }
+  }
+
+  // Kết thúc, không ai có thể ăn táo nữa
+  adam.checkAppleWeight(apple);
+  eva.checkAppleWeight(apple);
+
+</script>
 </body>
 </html>

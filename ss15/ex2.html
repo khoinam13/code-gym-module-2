@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi Feet và Meter</title>
 </head>
 <body>
+<script>
+    // Hàm chuyển đổi từ feet sang meters
+    function footToMeter(foot) {
+        return 0.305 * foot;
+    }
 
+    // Hàm chuyển đổi từ meters sang feet
+    function meterToFoot(meter) {
+        return 3.279 * meter;
+    }
+
+    // Test các hàm
+    let foot = 10; // Giá trị foot cần chuyển đổi
+    let meter = 5; // Giá trị meter cần chuyển đổi
+
+    console.log(`${foot} feet = ${footToMeter(foot).toFixed(3)} meters`);
+    console.log(`${meter} meters = ${meterToFoot(meter).toFixed(3)} feet`);
+</script>
 </body>
 </html>

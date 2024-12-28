@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 4 - Thêm alert()</title>
 </head>
 <body>
-
+<script>
+  function addNumbers() {
+    let firstNum = 4;
+    let secondNum = 8;
+    let result = firstNum + secondNum;
+    alert(`Kết quả trong hàm: ${result}`);
+    return result;
+  }
+  let result = 0;
+  alert(`Kết quả trước khi gọi hàm: ${result}`);
+  result = addNumbers();
+  alert(`Kết quả sau khi gọi hàm: ${result}`);
+</script>
 </body>
 </html>

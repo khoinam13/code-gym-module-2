@@ -2,9 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Class</title>
 </head>
 <body>
+<h1>Hình chữ nhật</h1>
+<canvas id="rectangleCanvas" width="500" height="500" style="border: 1px solid black;"></canvas>
+<div id="info"></div>
+<script>
+    // Định nghĩa lớp Rectangle
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
 
+        // Tính diện tích
+        getArea() {
+            return this.width * this.height;
+        }
+
+        // Tính chu vi
+        getPerimeter() {
+            return 2 * (this.width + this.height);
+        }
+
+        // Hiển thị hình chữ nhật trên canvas
+        draw(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Xóa canvas trước khi vẽ
+                ctx.fillStyle = 'lightblue';
+                ctx.fillRect(50, 50, this.width, this.height); // Vẽ hình chữ nhật
+            } else {
+                alert("Trình duyệt không hỗ trợ canvas");
+            }
+        }
+    }
+
+    // Khởi tạo đối tượng Rectangle
+    let myRectangle = new Rectangle(200, 100);
+
+    // Hiển thị hình chữ nhật
+    myRectangle.draw('rectangleCanvas');
+
+    // Hiển thị thông tin ban đầu
+    let infoDiv = document.getElementById("info");
+    infoDiv.innerHTML = `
+            <p>Chiều dài: ${myRectangle.height}</p>
+            <p>Chiều rộng: ${myRectangle.width}</p>
+            <p>Diện tích: ${myRectangle.getArea()}</p>
+            <p>Chu vi: ${myRectangle.getPerimeter()}</p>
+        `;
+
+    // Thay đổi chiều dài và chiều rộng
+    myRectangle.width = 300;
+    myRectangle.height = 150;
+
+    // Cập nhật canvas và thông tin sau khi thay đổi
+    myRectangle.draw('rectangleCanvas');
+    infoDiv.innerHTML += `
+            <p><strong>Sau khi thay đổi:</strong></p>
+            <p>Chiều dài mới: ${myRectangle.height}</p>
+            <p>Chiều rộng mới: ${myRectangle.width}</p>
+            <p>Diện tích mới: ${myRectangle.getArea()}</p>
+            <p>Chu vi mới: ${myRectangle.getPerimeter()}</p>
+        `;
+</script>
 </body>
 </html>

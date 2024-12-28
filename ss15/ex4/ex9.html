@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9 - Kiểm tra ký tự</title>
 </head>
 <body>
-
+<script>
+    function countCharacter(array, character) {
+        let count = array.filter(item => item === character).length;
+        return count > 0 ? count : -1;
+    }
+    let arr = ['a', 'b', 'a', 'c', 'a'];
+    let char = 'a';
+    let result = countCharacter(arr, char);
+    document.write(`Ký tự "${char}" xuất hiện ${result} lần trong mảng.`);
+</script>
 </body>
 </html>
