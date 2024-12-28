@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Exercises</title>
+</head>
+<body>
+<h1>Array Functions Practice</h1>
+
+<h2>Bài 1: Nối các phần tử trong mảng</h2>
+<p>Kết quả: <span id="result1"></span></p>
+
+<h2>Bài 2: Chèn dấu (-) giữa hai số chẵn</h2>
+<input type="text" id="input2" placeholder="Nhập số (e.g., 025468)">
+<button onclick="insertDashes()">Chèn dấu</button>
+<p>Kết quả: <span id="result2"></span></p>
+
+<h2>Bài 3: Đổi chữ thường thành chữ hoa và ngược lại</h2>
+<input type="text" id="input3" placeholder="Nhập chuỗi">
+<button onclick="toggleCase()">Chuyển đổi</button>
+<p>Kết quả: <span id="result3"></span></p>
+
+<script>
+  // Bài 1
+  const myColor = ["Red", "Green", "White", "Black"];
+  document.getElementById("result1").textContent = myColor.join(",");
+
+  // Bài 2
+  function insertDashes() {
+    const input = document.getElementById("input2").value;
+    const result = input.split('').map((num, i, arr) => {
+      if (i > 0 && num % 2 === 0 && arr[i - 1] % 2 === 0) {
+        return '-' + num;
+      }
+      return num;
+    }).join('');
+    document.getElementById("result2").textContent = result;
+  }
+
+  // Bài 3
+  function toggleCase() {
+    const input = document.getElementById("input3").value;
+    const result = input.split('').map(char => {
+      if (char === char.toUpperCase()) {
+        return char.toLowerCase();
+      } else {
+        return char.toUpperCase();
+      }
+    }).join('');
+    document.getElementById("result3").textContent = result;
+  }
+</script>
+</body>
+</html>

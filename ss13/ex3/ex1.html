@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 1: Số lớn hơn hoặc bằng 10</title>
+</head>
+<body>
+<h1>Bài 1: Tính số nguyên lớn hơn hoặc bằng 10</h1>
+<script>
+  const array = [1, 20, 15, 3, 8, 30, 12, 5, 18, 2];
+  const count = array.filter(num => num >= 10).length;
+  document.write(`Mảng: ${array.join(", ")}<br>`);
+  document.write(`Số phần tử lớn hơn hoặc bằng 10: ${count}`);
+</script>
+</body>
+</html>

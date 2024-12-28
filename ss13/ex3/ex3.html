@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 3: Giá trị lớn nhất và trung bình</title>
+</head>
+<body>
+<h1>Bài 3: Giá trị lớn nhất và trung bình</h1>
+<script>
+  const array = [10, 20, 15, 25, 30, 5, 35, 40, 45, 50];
+  const max = Math.max(...array);
+  const avg = array.reduce((a, b) => a + b, 0) / array.length;
+  document.write(`Mảng: ${array.join(", ")}<br>`);
+  document.write(`Giá trị lớn nhất: ${max}<br>`);
+  document.write(`Giá trị trung bình: ${avg}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 2: Giá trị lớn nhất</title>
+</head>
+<body>
+<h1>Bài 2: Giá trị lớn nhất trong mảng</h1>
+<script>
+  const array = [5, 8, 20, 1, 15, 3, 10, 12, 18, 25];
+  const max = Math.max(...array);
+  const index = array.indexOf(max);
+  document.write(`Mảng: ${array.join(", ")}<br>`);
+  document.write(`Giá trị lớn nhất: ${max}<br>`);
+  document.write(`Vị trí của giá trị lớn nhất: ${index}`);
+</script>
+</body>
+</html>

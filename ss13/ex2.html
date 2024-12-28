@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>Dictionary App</h1>
+<form id="dictionary-form">
+    <label for="search-word">Enter English Word:</label>
+    <input type="text" id="search-word" placeholder="Type a word..." required>
+    <button type="submit">Translate</button>
+</form>
+<div class="result" id="result"></div>
+
+<script>
+    // Step 1: Define two arrays
+    const englishWords = ["hello", "world", "book", "pen", "computer"];
+    const vietnameseWords = ["xin chào", "thế giới", "sách", "bút", "máy tính"];
+
+    // Step 2: Add event listener for form submission
+    document.getElementById('dictionary-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+        const searchWord = document.getElementById('search-word').value.trim().toLowerCase();
+        const resultElement = document.getElementById('result');
+
+        // Step 3: Search the word
+        const index = englishWords.indexOf(searchWord);
+        if (index !== -1) {
+            // Found the word
+            resultElement.textContent = `Translation: ${vietnameseWords[index]}`;
+            resultElement.style.color = 'green';
+        } else {
+            // Word not found
+            resultElement.textContent = "Word not found in the dictionary!";
+            resultElement.style.color = 'red';
+        }
+    });
+</script>
+</body>
+</html>

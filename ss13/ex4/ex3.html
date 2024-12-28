@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let arr = ['a', '1', 'b', '2', 'c', '3'];
+    let count = 0;
+
+    for (let char of arr) {
+        if (!isNaN(char) && char.trim() !== '') {
+            count++;
+        }
+    }
+
+    console.log(`Số ký tự số trong mảng: ${count}`); // Output: 3
+</script>
+</body>
+</html>
