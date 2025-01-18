@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Bouncing Ball Game</title>
+    <style>
+        *{
+          margin: 0; padding: 0; box-sizing: border-box; font-size: 10px;
+        }
+        body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .container{
+          /*width: 41rem;*/
+          /*height: 40rem;*/
+
+          /*  text-align: center;*/
+
+
+        }
+        .box-score{
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .box-score span{
+            color: red;
+            font-size: 1.8rem;
+            margin-left: 0.5rem;
+        }
+        .box-game{
+            background-color: #F0F0F0;
+            border: 2px solid #AFB3B3;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box-score">Điểm của bạn:<span id="scoce"></span><div>
+        <div class="box-game">
+            <canvas id="canvas" width="410px" height="330px"></canvas>
+        </div>
+    </div>
+    <script src="balljs.js"></script>
+</body>
+</html>
