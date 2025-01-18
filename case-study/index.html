@@ -12,8 +12,10 @@
           justify-content: center;
           align-items: center;
           height: 100vh;
+            background-image: url("https://i.imgur.com/HsTvkqy.jpg");
         }
         .container{
+
           /*width: 41rem;*/
           /*height: 40rem;*/
 
@@ -23,25 +25,35 @@
         }
         .box-score{
             font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-weight: 500;
+            color: #cdcdcd;;
         }
         .box-score span{
-            color: red;
+            color: blue;
             font-size: 1.8rem;
             margin-left: 0.5rem;
+            font-weight: 800;
         }
         .box-game{
+            margin-top: 1rem;
             background-color: #F0F0F0;
             border: 2px solid #AFB3B3;
 
+        }
+        .heading-game{
+            font-size: 3rem;
+            color: #cdcdcd;
+            font-weight: 1000;
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="box-score">Điểm của bạn:<span id="scoce"></span><div>
+        <h2 class="heading-game">Trò chơi nảy bóng</h2>
+        <div class="box-score">Điểm của bạn:<span id="scoce">0</span><div>
         <div class="box-game">
             <canvas id="canvas" width="410px" height="330px"></canvas>
         </div>
