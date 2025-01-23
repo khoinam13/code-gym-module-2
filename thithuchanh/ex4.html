@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="ex4.css">
+</head>
+<body>
+
+    <div class="container">
+      <div>
+        <h2>Thêm Khách Hàng</h2>
+        <form id="customer-form">
+          <label for="name">Tên: </label><br>
+          <input type="text" id="name" required><br><br>
+          <label for="phone">Số điện thoại: </label><br>
+          <input type="text" id="phone" required><br><br>
+          <label for="address">Địa chỉ: </label><br>
+          <input type="text" id="address" required><br><br>
+          <label for="email">Email: </label><br>
+          <input type="email" id="email" required><br><br>
+          <button type="submit">Thêm khách hàng</button>
+        </form>
+      </div>
+      <table border="1">
+        <thead>
+          <th> Mã  khách  hàng</th>
+          <th>Tên khách hàng</th>
+          <th>Số điện thoại</th>
+          <th> Địa chỉ</th>
+          <th>Email</th>
+        </thead>
+        <tbody id="data-user">
+        </tbody>
+      </table>
+    </div>
+    <script src="ex4.js"></script>
+</body>
+</html>
